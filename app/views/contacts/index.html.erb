@@ -1,0 +1,19 @@
+<h1>問い合わせ一覧</h1>
+<table>
+    <tr>
+        <th>名前</th>
+        <th>問い合わせ内容</th>
+        <th>連絡先</th>
+    </tr>
+    <% @contacts.each do |contact| %>
+        <tr>
+            <td><%= link_to contact.name, contact_path(contact) %></td>
+            <td class="body"><%= contact.body %></td>
+            <td><%= contact.emailaddress %></td>
+        </tr>
+    <% end %>
+</table>
+
+<p><%= link_to'新規問い合わせはこちらから', new_contact_path %></p>
+
+

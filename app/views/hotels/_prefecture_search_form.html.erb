@@ -1,0 +1,11 @@
+<%= search_form_for(@q2, url:hotels_path, as: :q2) do |form| %>
+
+    <div>
+
+        <%= form.label :都道府県名 %>
+        <%= form.collection_select :prefecture_id_eq, @prefectures, :id, :name, :include_blank => '-' %>
+        <%= form.submit %> 
+
+    </div>
+    
+<% end %>

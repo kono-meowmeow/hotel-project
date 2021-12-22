@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>予約が完了しました。</h1>
+    <p>予約の詳細は以下の通りです。</p>
+    <hr>
+    <div>
+        <p>ホテル名: <%= @booking.hotel.name %> </p>
+        <p>氏名: <%= @booking.name %> </p>
+        <p>お客様連絡先: <%= @booking.emailaddress %> </p>
+        <p>チェックイン予定日: <%= @booking.checkin %> </p>
+        <p>チェックアウト予定日: <%= @booking.checkout %> </p>
+        <p>宿泊人数: <%= @booking.numberofpeople %> </p>
+    </div>
+
+    <%= link_to '訂正はこちらから', edit_hotel_booking_path %>
+    <%= link_to 'ホテルの詳細はこちら', hotel_path(@booking.hotel) %>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+    <h1><%= @prefecture.name %></h1>
+    <hr>
+    <div>
+        <p>ホテルの一覧</p>
+        <ul>
+            <% @hotels.each do |hotel| %>   
+                <li><%= link_to hotel.name, hotel_path(hotel) %></li>
+            <% end %>
+        </ul>    
+    </div>
+
+    <%= link_to'トップ', root_path %>
+</div>

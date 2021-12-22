@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h1><%= link_to @hotel.name, hotel_path(@hotel) %>の評価一覧</h1>
+    <hr>
+    <div>
+        <% @reviews.each do |review| %>
+            <b><%= link_to review.title, hotel_review_path(@hotel, review) %></b><br>
+            <%= review.name %><br>
+            <p class="body">
+                <%= review.rate %><br>
+                <%= review.body %>
+            </p><hr>
+        <% end %>
+    </div>
+    <%= link_to 'レビューする', new_hotel_review_path(@hotel) %>
+
+</div>

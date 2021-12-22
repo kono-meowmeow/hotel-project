@@ -1,0 +1,20 @@
+<%= search_form_for(@q, url:hotels_path) do |form| %>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <%= form.label :ホテル名%>
+            <%= form.search_field :name_cont %>
+            <%= form.submit %> 
+        </div>
+
+        <div class="col-md-6">
+            <%= form.label :都道府県名 %>
+            <%= form.collection_select :prefecture_id_eq, @prefectures, :id, :name, :include_blank => '-' %>
+            <%= form.submit %> 
+        </div>
+
+
+    </div>
+
+<% end %>

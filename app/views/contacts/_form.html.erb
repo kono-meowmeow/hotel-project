@@ -1,0 +1,24 @@
+<%= form_with(model: contact, local: true) do |form| %>
+    <!-- name -->
+        <div class="field">
+            <p class="contact-label"><%= form.label :Name %>
+            <%= form.text_field :name, id: :contacter_name %>
+        </div>
+    <!-- Email Address -->
+        <div class="field">
+            <%= form.label :Email_Address %>
+            <%= form.text_field :emailaddress, id: :contacter_email %>
+        </div>
+    <br>
+    <!-- Body -->
+        <div class="field">
+            <%= form.label :お問い合わせ内容 %>
+            <%= form.text_area :body, id: :contact_body %>
+        </div>
+    <!-- submit -->
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>
+
+

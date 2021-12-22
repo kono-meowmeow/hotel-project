@@ -1,0 +1,31 @@
+<div class="container">
+
+    <h1><%= @hotel.name %></h1>
+
+    <%# pathの記述、是枝さんに教えていただきました。 %>
+    <%= link_to @hotel.prefecture.name, prefecture_path(@hotel.prefecture) %>
+
+    <hr>
+    <div class="row">
+        <p class="col-md-3"><%= image_tag(@hotel.image_url, class: "show-image") if @hotel.image.present? %></p>
+        <p class="col-md-9"><%= @hotel.body %></p>
+    </div>
+    <br>
+    <%= link_to'ご予約はこちらから', new_hotel_booking_path(@hotel) %><br>
+    <%= link_to'評価一覧', hotel_reviews_path(@hotel) %><br>
+    <hr>
+    <div class="row">
+        <% @reviews.each do |review| %>
+            <div class="col-md-10">
+                <b><%= link_to review.title, hotel_review_path(@hotel, review) %></b><br>
+                <%= review.name %><br>
+                <p class="body">
+                    <%= review.rate %><br>
+                    <%= review.body %>
+                </p><hr>
+            </div>
+        <% end %>
+    </div>
+
+
+</div>

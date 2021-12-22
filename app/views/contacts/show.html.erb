@@ -1,0 +1,12 @@
+<h1>問い合わせ詳細</h1>
+<hr>
+<p>名前:<%= @contact.name %></p>
+<p>問い合わせ内容<br><%= @contact.body %></p>
+<p>連絡先:<%= @contact.emailaddress %></p>
+<hr>
+<p>
+    <%= link_to '修正', edit_contact_path(@contact) %>
+    <%= link_to '削除', contact_path(@contact), data: { confirm: '問い合わせを取りやめてよろしいですか？' },  method: :delete  %>
+</p>
+<br>
+<%= link_to'Back',contacts_path %>
