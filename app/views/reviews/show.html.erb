@@ -1,10 +1,14 @@
-<h1><%= @review.name %>さんによる評価の詳細</h1>
-<hr>
-<div>
-    <b><%= @review.title %></b><br>
-    <p class="body">
-        <%= @review.rate %><br>
-        <%= @review.body %>
-    </p>
+<div class="container">
+
+    <h1><%= @review.name %>さんによる評価の詳細</h1>
+    <hr>
+    <div>
+        <b><%= @review.title %></b><br>
+        <p class="body">
+            <%= @review.rate %><br>
+            <%= @review.body %>
+        </p>
+    </div>
+    <%= link_to'レビュー一覧に戻る', hotel_reviews_path(@hotel) %>
+
 </div>
-<%= link_to'レビュー一覧に戻る', hotel_reviews_path(@hotel) %>

@@ -8,7 +8,7 @@
             <%= review.name %><br>
             <p class="body">
                 <%= review.rate %><br>
-                <%= review.body %>
+                <%= review.body.truncate(110) %>
             </p><hr>
         <% end %>
     </div>
